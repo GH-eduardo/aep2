@@ -2,10 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:aep2/screens/home_screen.dart';
 
 void main() {
-  runApp(PhishingDetectorApp());
+  runApp(const PhishingDetectorApp());
 }
 
 class PhishingDetectorApp extends StatelessWidget {
+  const PhishingDetectorApp({super.key});
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -13,7 +15,7 @@ class PhishingDetectorApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: HomeScreen(),
+      home: const HomeScreen(),
     );
   }
 }

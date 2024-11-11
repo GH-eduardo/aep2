@@ -3,7 +3,10 @@ import 'package:flutter/services.dart';
 import 'package:aep2/services/encryption_service.dart';
 
 class DecryptionScreen extends StatefulWidget {
+  const DecryptionScreen({super.key});
+
   @override
+  // ignore: library_private_types_in_public_api
   _DecryptionScreenState createState() => _DecryptionScreenState();
 }
 
@@ -20,7 +23,7 @@ class _DecryptionScreenState extends State<DecryptionScreen> {
   void _copyDecryptedText() {
     Clipboard.setData(ClipboardData(text: _decryptedText));
     ScaffoldMessenger.of(context).showSnackBar(
-      SnackBar(
+      const SnackBar(
           content: Text(
               'Texto descriptografado copiado para a área de transferência!')),
     );
@@ -29,34 +32,34 @@ class _DecryptionScreenState extends State<DecryptionScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('Descriptografar Email')),
+      appBar: AppBar(title: const Text('Descriptografar Email')),
       body: Padding(
-        padding: EdgeInsets.all(16.0),
+        padding: const EdgeInsets.all(16.0),
         child: Column(
           children: [
             TextField(
-              maxLines: 6,
               minLines: 3,
+              maxLines: 6,
               controller: _controller,
-              decoration: InputDecoration(
+              decoration: const InputDecoration(
                 labelText: 'Digite o texto a ser descriptografado',
                 border: OutlineInputBorder(),
                 contentPadding:
                     EdgeInsets.symmetric(vertical: 16.0, horizontal: 12.0),
               ),
             ),
-            SizedBox(height: 16),
+            const SizedBox(height: 16),
             ElevatedButton(
               onPressed: _decryptText,
-              child: Text('Descriptografar'),
+              child: const Text('Descriptografar'),
             ),
-            SizedBox(height: 16),
+            const SizedBox(height: 16),
             if (_decryptedText.isNotEmpty) ...[
               Text('Texto descriptografado : $_decryptedText'),
-              SizedBox(height: 8),
+              const SizedBox(height: 8),
               ElevatedButton(
                 onPressed: _copyDecryptedText,
-                child: Text('Copiar texto descriptografado'),
+                child: const Text('Copiar texto descriptografado'),
               ),
             ],
           ],

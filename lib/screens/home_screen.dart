@@ -3,10 +3,12 @@ import 'package:aep2/screens/encryption_screen.dart';
 import 'package:aep2/screens/decryption_screen.dart';
 
 class HomeScreen extends StatelessWidget {
+  const HomeScreen({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('Comunicação Segura')),
+      appBar: AppBar(title: const Text('Comunicação Segura')),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -15,19 +17,20 @@ class HomeScreen extends StatelessWidget {
               onPressed: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => EncryptionScreen()),
+                  MaterialPageRoute(builder: (context) => const EncryptionScreen()),
                 );
               },
-              child: Text('Criptografar Email'),
+              child: const Text('Criptografar Email'),
             ),
+            const SizedBox(height: 100),
             ElevatedButton(
               onPressed: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => DecryptionScreen()),
+                  MaterialPageRoute(builder: (context) => const DecryptionScreen()),
                 );
               },
-              child: Text('Descriptografar Email'),
+              child: const Text('Descriptografar Email'),
             ),
           ],
         ),
